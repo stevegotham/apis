@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.4/angular.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body ng-app='beerApp'>
+        <div ng-controller="beerController as bCtrl">
+            <form ng-submit='bCtrl.searchGiphy()'>
+                <input type="text" name="pokeName" ng-model="bCtrl.giphySearch"/>
+                <button type="submit" name="button">Search for Beer</button>
+            </form>
+
+             <img ng-repeat="gif in bCtrl.results" src="{{ gif.images.downsized.url}}">
+             </img>
+        </div>
+    </body>
+
+</html>
